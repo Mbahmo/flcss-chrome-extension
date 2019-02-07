@@ -14,3 +14,6 @@ FLCSS Chrome Extension
 - Click `Edit CSS` to open the FLCSS dashboard
 - In FLCSS Dashboard you will see `Edit CSS` box with buttons for each section such as `Header, Footer, Home, Inner Page & People, Blog`
 - Click the button of section that you want to work on
+
+# WARNING
+- DONT EDIT CSS directly in the backend only use the frontend editor
