@@ -1,5 +1,5 @@
-# flcss-chrome-extension
-FLCSS Chrome Extension
+# flcss-chrome-extension git version
+FLCSS Chrome Extension git version
 
 
 ## How to Install
