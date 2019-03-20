@@ -34,17 +34,23 @@ function renderSiteID(statusText) {
 	document.getElementById('siteid').textContent = statusText;
 }
 
-function renderEditButton(siteID){
-	document.getElementById('editbtn').setAttribute( 'href', 'https://flcss.smplwp.com/site/' + siteID );
+function renderButton(siteID){
+	document.getElementById('exportbtn').setAttribute( 'href', 'https://flcssgit.smplwp.com/?site=' + siteID + '&export' );
+	document.getElementById('screenshotbtn').setAttribute( 'href', 'https://flcss.smplwp.com/site/' + siteID + '?v=screenshot' );
 }
 
 document.addEventListener('DOMContentLoaded', function() {
 	getCurrentTabUrl(function(url) {
-		var siteID = getSiteID(url);
+		var siteID 	= getSiteID(url);
+		var source 	= document.head.querySelector("[name~=flcss_source][content]").content;
+
+		if( source == 'remote' ){
+			document.getElementById('flcss-status').innerHTML( 'YES' );
+		} else {
+			document.getElementById('flcss-status').innerHTML( 'NO' );
+		}
+
 		renderSiteID(siteID); 
-		renderEditButton(siteID);
+		renderButton(siteID);
 	});
-
-
-
 });
