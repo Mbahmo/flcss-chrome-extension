@@ -42,7 +42,7 @@ function renderButton(siteID){
 document.addEventListener('DOMContentLoaded', function() {
 	getCurrentTabUrl(function(url) {
 		var siteID 	= getSiteID(url);
-		var source 	= document.head.querySelector("[name~=flcss_source][content]").content;
+		//var source 	= document.head.querySelector("[name~=flcss_source][content]").content;
 
 		if( source == 'remote' ){
 			document.getElementById('flcss-status').innerHTML( 'YES' );
