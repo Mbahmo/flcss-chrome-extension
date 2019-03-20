@@ -4,11 +4,11 @@ var tabUrl = document.location.href;
 if(tabUrl.indexOf("findlaw1.flsitebuilder.com") >= 0 && tabUrl.indexOf("wp-admin") <= 1 && tabUrl.indexOf("wp-content") <= 1 ){
 
 	var source = document.head.querySelector("[name~=flcss_source][content]").content;
+	var siteID = getSiteID( tabUrl );
 
 	console.log( 'FindLaw site ' + siteID );
-	console.log( 'Source: ' + source );
+	console.log( 'CSS Source: ' + source );
 
-	var siteID = getSiteID( tabUrl );
 
 	/**
 	 * If source is remote, load remote css

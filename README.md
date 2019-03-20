@@ -17,3 +17,7 @@ FLCSS Chrome Extension git version
 
 # WARNING
 - DONT EDIT CSS directly in the backend only use the frontend editor
+
+## Todo
+- Remove `Edit CSS` button
+- Add Export CSS button that will open exported and minified CSS in new tab
