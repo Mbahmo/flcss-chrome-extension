@@ -20,12 +20,7 @@ if(tabUrl.indexOf("findlaw1.flsitebuilder.com") >= 0 && tabUrl.indexOf("wp-admin
 	 * If source is remote, load remote css
 	 */
 	if( source == 'remote' ){
-		loadCss( 'https://flcssgit.smplwp.com/' + siteID + '/general.css' );
-		loadCss( 'https://flcssgit.smplwp.com/' + siteID + '/header.css' );
-		loadCss( 'https://flcssgit.smplwp.com/' + siteID + '/footer.css' );
-		loadCss( 'https://flcssgit.smplwp.com/' + siteID + '/home.css' );
-		loadCss( 'https://flcssgit.smplwp.com/' + siteID + '/internal.css' );
-		loadCss( 'https://flcssgit.smplwp.com/' + siteID + '/blog.css' );
+		loadCss( 'https://flcssgit.smplwp.com/?site=' + siteID );
 	}
 
 }
