@@ -3,7 +3,13 @@ var tabUrl = document.location.href;
 // Only run if its findlaw site and not in admin
 if(tabUrl.indexOf("findlaw1.flsitebuilder.com") >= 0 && tabUrl.indexOf("wp-admin") <= 1 && tabUrl.indexOf("wp-content") <= 1 ){
 
-	var source = document.head.querySelector("[name~=flcss_source][content]").content;
+	// Check if meta flcss_source is exists
+	if( document.getElementsByName('flcss_source') ){
+		var source = document.head.querySelector("[name~=flcss_source][content]").content;
+	} else {
+		var source = local;
+	}
+
 	var siteID = getSiteID( tabUrl );
 
 	console.log( 'FindLaw site ' + siteID );
