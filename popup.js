@@ -43,16 +43,6 @@ function renderButton(siteID){
 document.addEventListener('DOMContentLoaded', function() {
 	getCurrentTabUrl(function(url) {
 		var siteID 	= getSiteID(url);
-		
-		/*
-		var source 	= document.head.querySelector("[name~=flcss_source][content]").content;
-		if( source == 'remote' ){
-			document.getElementById('flcss-status').innerHTML( 'YES' );
-		} else {
-			document.getElementById('flcss-status').innerHTML( 'NO' );
-		}
-		*/
-
 		renderSiteID(siteID); 
 		renderButton(siteID);
 	});
