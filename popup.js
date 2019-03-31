@@ -40,9 +40,16 @@ function renderButton(siteID){
 	document.getElementById('optionsbtn').setAttribute( 'href', 'https://'+ siteID +'.findlaw1.flsitebuilder.com/wp-admin/admin.php?page=et_divi_options' );
 }
 
+function generateCSSLink(siteID){
+	var str	= document.getElementById('csslink').value; 
+	var n		= str.replace("SITE_ID", siteID);
+	document.getElementById("csslink").value=n;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	getCurrentTabUrl(function(url) {
 		var siteID 	= getSiteID(url);
+		generateCSSLink(siteID);
 		renderSiteID(siteID); 
 		renderButton(siteID);
 	});

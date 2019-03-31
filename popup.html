@@ -32,6 +32,20 @@
 			.data {
 				margin-bottom: 10px;
 			}
+			.csslink label {
+				display: block;
+				margin-bottom: 5px;
+			}
+			.csslink textarea:focus {
+				outline: none;
+			}
+			.csslink textarea {
+				width: 100%;
+				border: none;
+				padding: 10px;
+				height: 80px;
+				font-size: 12px;
+			}
 			.btn {
 				background: #ff9100;
 				color: #fff;
@@ -57,9 +71,9 @@
 				<label>Site ID: </label>
 				<strong id="siteid"></strong>
 			</div>
-			<div class="data">
-				<label>Load FLCSS: </label>
-				<strong id="flcss-status"></strong>
+			<div class="csslink">
+				<label for="csslink">Add this to theme options</label>
+				<textarea name="csslink" id="csslink"><link href="https://flcssgit.smplwp.com/?site=SITE_ID" type="text/css" rel="stylesheet"></textarea>
 			</div>
 			<a href="" target="_blank" id="exportbtn" class="btn">EXPORT CSS</a>
 			<a href="" target="_blank" id="optionsbtn" class="btn">THEME OPTIONS</a>
