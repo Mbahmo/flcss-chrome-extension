@@ -4,14 +4,22 @@ var tabUrl = document.location.href;
 if(tabUrl.indexOf("findlaw1.flsitebuilder.com") >= 0 && tabUrl.indexOf("wp-admin") <= 1 && tabUrl.indexOf("wp-content") <= 1 ){
 	var siteID = getSiteID( tabUrl );
 	console.log( 'FindLaw site ' + siteID );
-} else {
+} 
+
+if( jQuery('p.branding a:last-child').text() == 'FindLaw' ){
 	
 	jQuery('html').prepend('<style>@media(max-width:980px){ .typographyPopup { margin-left: 0 !important; width: 100% !important; position:absolute !important; top: 0 !important; left: 0 !important; padding: 10px !important; } }</style>');
-	jQuery('body').append('<a href="#" id="checkTypography" style="font-size: 12px;padding: 10px 15px;font-weight: bold;border-radius: 4px;background-color:#2ecc71;color:#fff;position:fixed;z-index: 999999;opacity: 0.4;bottom: 10px;text-decoration: none;left: 10px;">T</a>');
+	jQuery('body').append('<a href="#" id="checkTypography" style="font-size: 20px;padding: 15px 20px;font-weight: bold;border-radius: 4px;background-color:#2ecc71;color:#fff;position:fixed;z-index: 999999;bottom: 10px;text-decoration: none;left: 10px;">T</a>');
 	
 	jQuery(document).ready(function ($) {
 		$('body').on('click', '#checkTypography', function(e){
 			e.preventDefault();
+			checkTypography();
+		});
+
+		jQuery(window).on('resize', function(){
+			jQuery('html,body').scrollTop(0);;
+			jQuery('.typographyPopup, .typographyOverlay').remove();
 			checkTypography();
 		});
 	});
@@ -54,8 +62,8 @@ if(tabUrl.indexOf("findlaw1.flsitebuilder.com") >= 0 && tabUrl.indexOf("wp-admin
 			var textLetterSpacing = jQuery('.content p').css('letter-spacing');
 			var textColor = jQuery('.content p').css('color');
 	
-			jQuery('body').append('<div style="position:fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.6); left: 0; top: 0;"></div>');
-			jQuery('body').append('<div class="typographyPopup"  style="position:fixed; width: 600px; height: auto; top: 0; left: 50%; margin-left: -300px; z-index:9999; background: #fff; padding: 30px 40px; border-radius:4px; margin-top: 10vh;"><h1>Site Width: ' + containerWidth + 'px</h1><h1>Heading</h1><ul style="font-size: 20px;"><li>Font Family: '+ headingFontFamily +'</li><li>Font Size: '+ headingFontSize +'</li><li>Font Weight: '+ headingFontWeight +'</li><li>Line Height: '+ headingLineHeight +'</li><li>Letter Spacing: '+ headingLetterSpacing +'</li><li>Color: '+ headingColor +'</li></ul><h1>Text Content</h1><ul style="font-size: 20px;"><li>Font Family: '+ textFontFamily +'</li><li>Font Size: '+ textFontSize +'</li><li>Font Weight: '+ textFontWeight +'</li><li>Line Height: '+ textLineHeight +'</li><li>Letter Spacing: '+ textLetterSpacing +'</li><li>Color: '+ textColor +'</li></ul></div>');
+			jQuery('body').append('<div class="typographyOverlay" style="position:fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.6); left: 0; top: 0;"></div>');
+			jQuery('body').append('<div class="typographyPopup"  style="position:fixed; width: 600px; height: auto; top: 0; left: 50%; margin-left: -300px; z-index:9999; background: #fff; padding: 30px 40px; border-radius:4px; margin-top: 10vh;"><h1 style="margin-top: 0;">Site Width: ' + containerWidth + 'px</h1><h1>Heading</h1><ul style="font-size: 20px; list-style-type:none; padding: 0; line-height: 1.5;"><li>Font Family: '+ headingFontFamily +'</li><li>Font Size: '+ headingFontSize +'</li><li>Font Weight: '+ headingFontWeight +'</li><li>Line Height: '+ headingLineHeight +'</li><li>Letter Spacing: '+ headingLetterSpacing +'</li><li>Color: '+ headingColor +'</li></ul><h1>Text Content</h1><ul style="font-size: 20px; list-style-type:none; padding: 0; line-height: 1.5;"><li>Font Family: '+ textFontFamily +'</li><li>Font Size: '+ textFontSize +'</li><li>Font Weight: '+ textFontWeight +'</li><li>Line Height: '+ textLineHeight +'</li><li>Letter Spacing: '+ textLetterSpacing +'</li><li>Color: '+ textColor +'</li></ul></div>');
 	}
 
 }
