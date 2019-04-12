@@ -35,6 +35,7 @@ function renderSiteID(statusText) {
 }
 
 function renderButton(siteID){
+	document.getElementById('editpostbtn').setAttribute( 'href', 'https://'+ siteID +'.findlaw1.flsitebuilder.com/wp-admin/post.php?post=15&action=edit' );
 	document.getElementById('exportbtn').setAttribute( 'href', 'https://flcssgit.smplwp.com/?site=' + siteID + '&export' );
 	document.getElementById('screenshotbtn').setAttribute( 'href', 'https://flcss.smplwp.com/site/' + siteID + '?v=screenshot' );
 	document.getElementById('optionsbtn').setAttribute( 'href', 'https://'+ siteID +'.findlaw1.flsitebuilder.com/wp-admin/admin.php?page=et_divi_options' );
