@@ -15,16 +15,24 @@ if( jQuery('p.branding a:last-child').text() == 'FindLaw' ){
 		$('body').on('click', '#checkTypography', function(e){
 			e.preventDefault();
 			checkTypography();
+			jQuery('.typographyOverlay').fadeIn();
+		});
+
+		$('body').on('click', '#toClose', function(e){
+			e.preventDefault();
+			jQuery('.typographyOverlay').fadeOut();
 		});
 
 		jQuery(window).on('resize', function(){
-			jQuery('html,body').scrollTop(0);;
-			jQuery('.typographyPopup, .typographyOverlay').remove();
+			jQuery('html,body').scrollTop(0);
 			checkTypography();
 		});
 	});
 
 	function checkTypography(){
+
+			jQuery('.typographyOverlay').remove();
+
 			var containerWidth = jQuery('.container-columns').width();
 			var headingFontFamily = jQuery('h1.page-title').css('font-family');
 	
@@ -62,8 +70,7 @@ if( jQuery('p.branding a:last-child').text() == 'FindLaw' ){
 			var textLetterSpacing = jQuery('.content p').css('letter-spacing');
 			var textColor = jQuery('.content p').css('color');
 	
-			jQuery('body').append('<div class="typographyOverlay" style="position:fixed; width: 100%; height: 100%; background: rgba(0,0,0,0.6); left: 0; top: 0;"></div>');
-			jQuery('body').append('<div class="typographyPopup"  style="position:fixed; width: 600px; height: auto; top: 0; left: 50%; margin-left: -300px; z-index:9999; background: #fff; padding: 30px 40px; border-radius:4px; margin-top: 10vh;"><h1 style="margin-top: 0;">Site Width: ' + containerWidth + 'px</h1><h1>Heading</h1><ul style="font-size: 20px; list-style-type:none; padding: 0; line-height: 1.5;"><li>Font Family: '+ headingFontFamily +'</li><li>Font Size: '+ headingFontSize +'</li><li>Font Weight: '+ headingFontWeight +'</li><li>Line Height: '+ headingLineHeight +'</li><li>Letter Spacing: '+ headingLetterSpacing +'</li><li>Color: '+ headingColor +'</li></ul><h1>Text Content</h1><ul style="font-size: 20px; list-style-type:none; padding: 0; line-height: 1.5;"><li>Font Family: '+ textFontFamily +'</li><li>Font Size: '+ textFontSize +'</li><li>Font Weight: '+ textFontWeight +'</li><li>Line Height: '+ textLineHeight +'</li><li>Letter Spacing: '+ textLetterSpacing +'</li><li>Color: '+ textColor +'</li></ul></div>');
+			jQuery('body').append('<div class="typographyOverlay" style="position:fixed; display: none; width: 100%; height: 100%; background: rgba(0,0,0,0.6); left: 0; top: 0;"><div class="typographyPopup"  style="position:fixed; width: 600px; height: auto; top: 0; left: 50%; margin-left: -300px; z-index:9999; background: #fff; padding: 30px 40px; border-radius:4px; margin-top: 10vh;"><a style="position:absolute; right: 20px; top: 20px;" href="#" id="toClose">Close</a><h1 style="margin-top: 0;">Site Width: ' + containerWidth + 'px</h1><h1>Heading</h1><ul style="font-size: 20px; list-style-type:none; padding: 0; line-height: 1.5;"><li>Font Family: '+ headingFontFamily +'</li><li>Font Size: '+ headingFontSize +'</li><li>Font Weight: '+ headingFontWeight +'</li><li>Line Height: '+ headingLineHeight +'</li><li>Letter Spacing: '+ headingLetterSpacing +'</li><li>Color: '+ headingColor +'</li></ul><h1>Text Content</h1><ul style="font-size: 20px; list-style-type:none; padding: 0; line-height: 1.5;"><li>Font Family: '+ textFontFamily +'</li><li>Font Size: '+ textFontSize +'</li><li>Font Weight: '+ textFontWeight +'</li><li>Line Height: '+ textLineHeight +'</li><li>Letter Spacing: '+ textLetterSpacing +'</li><li>Color: '+ textColor +'</li></ul></div></div>');
 	}
 
 }
