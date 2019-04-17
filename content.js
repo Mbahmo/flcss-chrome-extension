@@ -6,7 +6,7 @@ if(tabUrl.indexOf("findlaw1.flsitebuilder.com") >= 0 && tabUrl.indexOf("wp-admin
 	console.log( 'FindLaw site ' + siteID );
 } 
 
-if( jQuery('p.branding a:last-child').text() == 'FindLaw' ){
+if( jQuery('a[href="https://www.findlaw.com/"]').text() == 'FindLaw' ){
 	
 	jQuery('html').prepend('<style>@media(max-width:980px){ .typographyPopup { margin-left: 0 !important; width: 100% !important; position:absolute !important; top: 0 !important; left: 0 !important; padding: 10px !important; } }</style>');
 	jQuery('body').append('<a href="#" id="checkTypography" style="font-size: 20px;padding: 15px 20px;font-weight: bold;border-radius: 4px;background-color:#2ecc71;color:#fff;position:fixed;z-index: 999999;bottom: 10px;text-decoration: none;left: 10px;">T</a>');
@@ -24,9 +24,9 @@ if( jQuery('p.branding a:last-child').text() == 'FindLaw' ){
 		});
 
 		jQuery(window).on('resize', function(){
-			jQuery('html,body').scrollTop(0);
+			//jQuery('html,body').scrollTop(0);
 			checkTypography();
-			jQuery('.typographyOverlay').fadeIn();
+			//jQuery('.typographyOverlay').fadeIn();
 		});
 	});
 
