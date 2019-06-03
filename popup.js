@@ -30,15 +30,24 @@ function getSiteID( url ){
 	return siteID;
 }
 
+function getServerID( url ){
+	var siteUrl = url;
+	// https://123456.findlaw2.flsitebuilder.com
+	var slice1 = siteUrl.replace('https://', '');
+	var slice2 = slice1.split('.');
+	return slice2[1];
+}
+
 function renderSiteID(statusText) {
 	document.getElementById('siteid').textContent = statusText;
 }
 
-function renderButton(siteID){
-	document.getElementById('editpostbtn').setAttribute( 'href', 'https://'+ siteID +'.findlaw1.flsitebuilder.com/wp-admin/post.php?post=15&action=edit' );
+function renderButton(siteID,serverID){
+	document.getElementById('checklandingbtn').setAttribute( 'href', 'https://flcss.smplwp.com/site/' + siteID );
 	document.getElementById('exportbtn').setAttribute( 'href', 'https://flcssgit.smplwp.com/?site=' + siteID + '&export' );
 	document.getElementById('screenshotbtn').setAttribute( 'href', 'https://flcss.smplwp.com/site/' + siteID + '?v=screenshot' );
-	document.getElementById('optionsbtn').setAttribute( 'href', 'https://'+ siteID +'.findlaw1.flsitebuilder.com/wp-admin/admin.php?page=et_divi_options' );
+	document.getElementById('optionsbtn').setAttribute( 'href', 'https://'+ siteID +'.'+ serverID +'.flsitebuilder.com/wp-admin/admin.php?page=et_divi_options' );
+	document.getElementById('librarybtn').setAttribute( 'href', 'https://'+ siteID +'.'+ serverID +'.flsitebuilder.com/wp-admin/edit.php?post_type=et_pb_layout' );
 }
 
 function generateCSSLink(siteID){
@@ -50,8 +59,9 @@ function generateCSSLink(siteID){
 document.addEventListener('DOMContentLoaded', function() {
 	getCurrentTabUrl(function(url) {
 		var siteID 	= getSiteID(url);
+		var serverID = getServerID(url);
 		generateCSSLink(siteID);
 		renderSiteID(siteID); 
-		renderButton(siteID);
+		renderButton(siteID,serverID);
 	});
 });
