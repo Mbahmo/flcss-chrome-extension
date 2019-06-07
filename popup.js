@@ -50,17 +50,18 @@ function renderButton(siteID,serverID){
 	document.getElementById('librarybtn').setAttribute( 'href', 'https://'+ siteID +'.'+ serverID +'.flsitebuilder.com/wp-admin/edit.php?post_type=et_pb_layout' );
 }
 
-function generateCSSLink(siteID){
+function generateCSSLink(siteID,serverID){
 	var str	= document.getElementById('csslink').value; 
 	var n		= str.replace("SITE_ID", siteID);
-	document.getElementById("csslink").value=n;
+	var o		= n.replace("SERVER_ID", serverID);
+	document.getElementById("csslink").value=o;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
 	getCurrentTabUrl(function(url) {
 		var siteID 	= getSiteID(url);
 		var serverID = getServerID(url);
-		generateCSSLink(siteID);
+		generateCSSLink(siteID,serverID);
 		renderSiteID(siteID); 
 		renderButton(siteID,serverID);
 	});
