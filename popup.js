@@ -1,50 +1,70 @@
-function getCurrentTabUrl(callback) {  
+function getCurrentTabUrl(callback) {
 	var queryInfo = {
-		active: true, 
+		active: true,
 		currentWindow: true
 	};
-	chrome.tabs.query(queryInfo, function(tabs) {
-		var tab = tabs[0]; 
+	chrome.tabs.query(queryInfo, function (tabs) {
+		var tab = tabs[0];
 		var url = tab.url;
 		callback(url);
 	});
 }
 
-function getTabUrl(){
+function getTabUrl() {
 	var queryInfo = {
-		active: true, 
+		active: true,
 		currentWindow: true
 	};
-	chrome.tabs.query(queryInfo, function(tabs) {
-		var tab = tabs[0]; 
+	chrome.tabs.query(queryInfo, function (tabs) {
+		var tab = tabs[0];
 		var url = tab.url;
 	});
 	return url;
 }
 
-function getSiteID( url ){
+function getSiteID(url) {
 	var siteUrl = url;
 	var slice1 = siteUrl.replace('https://', '');
 	var slice2 = slice1.split('.', 1);
-	var siteID	=	slice2[0];
+	var siteID = slice2[0];
 	return siteID;
+}
+
+function getServerID(url) {
+	var siteUrl = url;
+	// https://123456.findlaw2.flsitebuilder.com
+	var slice1 = siteUrl.replace('https://', '');
+	var slice2 = slice1.split('.');
+	return slice2[1];
 }
 
 function renderSiteID(statusText) {
 	document.getElementById('siteid').textContent = statusText;
 }
 
-function renderEditButton(siteID){
-	document.getElementById('editbtn').setAttribute( 'href', 'https://flcss.smplwp.com/site/' + siteID );
+function renderButton(siteID, serverID) {
+	document.getElementById('checklandingbtn').setAttribute('href', 'https://flcss.smplwp.com/site/' + siteID);
+	document.getElementById('exportbtn').setAttribute('href', 'https://flcssgit.smplwp.com/?site=' + siteID + '&export');
+	document.getElementById('screenshotbtn').setAttribute('href', 'https://flcss.smplwp.com/site/' + siteID + '?v=screenshot');
+	document.getElementById('optionsbtn').setAttribute('href', 'https://' + siteID + '.' + serverID + '.flsitebuilder.com/wp-admin/admin.php?page=et_divi_options');
+	document.getElementById('librarybtn').setAttribute('href', 'https://' + siteID + '.' + serverID + '.flsitebuilder.com/wp-admin/edit.php?post_type=et_pb_layout');
+	document.getElementById('redirectionsbtn').setAttribute('href', 'https://' + siteID + '.' + serverID + '.flsitebuilder.com/wp-admin/tools.php?page=redirection.php');
+	document.getElementById('jsonldbtn').setAttribute('href', 'https://' + siteID + '.' + serverID + '.flsitebuilder.com/wp-admin/options-general.php?page=options-general-php-json-ld');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-	getCurrentTabUrl(function(url) {
+function generateCSSLink(siteID, serverID) {
+	var str = document.getElementById('csslink').value;
+	var n = str.replace("SITE_ID", siteID);
+	var o = n.replace("SERVER_ID", serverID);
+	document.getElementById("csslink").value = o;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+	getCurrentTabUrl(function (url) {
 		var siteID = getSiteID(url);
-		renderSiteID(siteID); 
-		renderEditButton(siteID);
+		var serverID = getServerID(url);
+		generateCSSLink(siteID, serverID);
+		renderSiteID(siteID);
+		renderButton(siteID, serverID);
 	});
-
-
-
 });

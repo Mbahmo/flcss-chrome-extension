@@ -1,5 +1,5 @@
-# flcss-chrome-extension
-FLCSS Chrome Extension
+# flcss-chrome-extension git version
+FLCSS Chrome Extension git version
 
 
 ## How to Install
@@ -17,3 +17,7 @@ FLCSS Chrome Extension
 
 # WARNING
 - DONT EDIT CSS directly in the backend only use the frontend editor
+
+## Todo
+- Remove `Edit CSS` button
+- Add Export CSS button that will open exported and minified CSS in new tab
