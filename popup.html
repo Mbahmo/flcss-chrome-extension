@@ -1,87 +1,102 @@
 <html>
-	<head>
-		<style>
-			body {
-				width: 300px;
-				margin: 0;
-				word-break: break-word;
-				background-color: #585b5f;
-			}
-			.header {
-				background: #ff9100;
-				color: #fff;
-				padding: 10px 20px;
-				font-weight: bold;
-			}
-			.content {
-				padding: 20px;
-				color: #fff;
-				font-size: 14px;
-			}
-			.description {
-				font-size: 12px;
-				margin-bottom: 20px;
-			}
-			.indicator {
-				display: inline-block;
-				position: absolute;
-				width: 12px;
-				height: 12px;
-				color: red;
-			}
-			.data {
-				margin-bottom: 10px;
-			}
-			.csslink label {
-				display: block;
-				margin-bottom: 5px;
-			}
-			.csslink textarea:focus {
-				outline: none;
-			}
-			.csslink textarea {
-				width: 100%;
-				border: none;
-				padding: 10px;
-				height: 80px;
-				font-size: 12px;
-			}
-			.btn {
-				background: #ff9100;
-				color: #fff;
-				border: none;
-				display: inline-block;
-				padding: 10px 20px;
-				text-decoration: none;
-				font-weight: bold;
-				margin-top: 10px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="header">
-			FL CSS Collaboration
-			<span class="indicator"></span>
+
+<head>
+	<style>
+		body {
+			width: 300px;
+			margin: 0;
+			word-break: break-word;
+			background-color: #585b5f;
+		}
+
+		.header {
+			background: #ff9100;
+			color: #fff;
+			padding: 10px 20px;
+			font-weight: bold;
+		}
+
+		.content {
+			padding: 20px;
+			color: #fff;
+			font-size: 14px;
+		}
+
+		.description {
+			font-size: 12px;
+			margin-bottom: 20px;
+		}
+
+		.indicator {
+			display: inline-block;
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			color: red;
+		}
+
+		.data {
+			margin-bottom: 10px;
+		}
+
+		.csslink label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		.csslink textarea:focus {
+			outline: none;
+		}
+
+		.csslink textarea {
+			width: 100%;
+			border: none;
+			padding: 10px;
+			height: 80px;
+			font-size: 12px;
+		}
+
+		.btn {
+			background: #ff9100;
+			color: #fff;
+			border: none;
+			display: inline-block;
+			padding: 10px 20px;
+			text-decoration: none;
+			font-weight: bold;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		FL CSS Collaboration
+		<span class="indicator"></span>
+	</div>
+	<div class="content">
+		<div class="description">
+			Use this tool to prevent css conflict when working together in the same site
 		</div>
-		<div class="content">
-			<div class="description">
-				Use this tool to prevent css conflict when working together in the same site
-			</div>
-			<div class="data">
-				<label>Site ID: </label>
-				<strong id="siteid"></strong>
-			</div>
-			<div class="csslink">
-				<label for="csslink">Add this to theme options</label>
-				<textarea name="csslink" id="csslink"><link href="https://flcssgit.smplwp.com/?site=SITE_ID&fl=SERVER_ID" type="text/css" rel="stylesheet"></textarea>
-			</div>
-			<a href="" target="_blank" id="exportbtn" class="btn">EXPORT CSS</a>
-			<a href="" target="_blank" id="optionsbtn" class="btn">THEME OPTIONS</a>
-			<a href="" target="_blank" id="librarybtn" class="btn">DIVI LIBRARY</a>
-			<a href="" target="_blank" id="screenshotbtn" class="btn">GENERATE SCREENSHOT</a>
-			<a href="" target="_blank" id="checklandingbtn" class="btn">CHECK LANDING PAGES</a>
+		<div class="data">
+			<label>Site ID: </label>
+			<strong id="siteid"></strong>
 		</div>
-		
-		<script src="popup.js"></script>
-	</body>
+		<div class="csslink">
+			<label for="csslink">Add this to theme options</label>
+			<textarea name="csslink"
+				id="csslink"><link href="https://flcssgit.smplwp.com/?site=SITE_ID&fl=SERVER_ID" type="text/css" rel="stylesheet"></textarea>
+		</div>
+		<a href="" target="_blank" id="exportbtn" class="btn">EXPORT CSS</a>
+		<a href="" target="_blank" id="optionsbtn" class="btn">THEME OPTIONS</a>
+		<a href="" target="_blank" id="librarybtn" class="btn">DIVI LIBRARY</a>
+		<a href="" target="_blank" id="screenshotbtn" class="btn">GENERATE SCREENSHOT</a>
+		<a href="" target="_blank" id="checklandingbtn" class="btn">CHECK LANDING PAGES</a>
+		<a href="" target="_blank" id="redirectionsbtn" class="btn">REDIRECTIONS</a>
+		<a href="" target="_blank" id="jsonldbtn" class="btn">JSON LD</a>
+	</div>
+
+	<script src="popup.js"></script>
+</body>
+
 </html>
