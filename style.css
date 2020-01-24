@@ -1,0 +1,94 @@
+body {
+	width: 300px;
+	margin: 0;
+	word-break: break-word;
+	background-color: #585b5f;
+}
+
+.header {
+	background: #ff9100;
+	color: #fff;
+	padding: 10px 20px;
+	font-weight: bold;
+}
+
+.content {
+	padding: 20px;
+	color: #fff;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+.description {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.indicator {
+	display: inline-block;
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	color: red;
+}
+
+.data {
+	margin-bottom: 10px;
+}
+
+.url label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.url textarea:focus {
+	outline: none;
+}
+
+.url textarea {
+	width: 100%;
+	border: none;
+	padding: 10px;
+	height: 80px;
+	font-size: 12px;
+}
+
+.url input {
+	width: 100%;
+	border: none;
+	padding: 10px;
+	height: 40px;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.btn {
+	background: #ff9100;
+	color: #fff;
+	border: none;
+	display: block;
+	width: 100%;
+	max-width: 215px;
+	text-align: center;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-weight: bold;
+	margin: 5px
+}
+
+.csslink label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.csslink textarea:focus {
+	outline: none;
+}
+
+.csslink textarea {
+	width: 100%;
+	border: none;
+	padding: 10px;
+	height: 80px;
+	font-size: 12px;
+}

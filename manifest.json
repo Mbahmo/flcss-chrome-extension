@@ -3,7 +3,7 @@
 	"name": "FLCSSboration",
 	"description": "CSS collaboration tools for FL project",
 	"version": "1",
-	"author": "Yongki",
+	"author": ["Yongki", "Ryan", "Anthony"],
 	"browser_action": {
 		"default_title": "CSS Collaboration tool",
 		"default_popup": "popup.html"
@@ -15,5 +15,6 @@
 	"permissions": [
 		"activeTab",
 		"tabs"
-	]
+	],
+	"content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
 }
