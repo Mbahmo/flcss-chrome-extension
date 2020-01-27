@@ -15,7 +15,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 		{
 			code: "$('.content').append(" +"'" +typography+ "'" + "); + "
 			+ "$('#content').append(" +"'" +typography+ "'" + "); + " 
-			+ "$('.fl-main-content').append(" +"'" +typography+ "'" + ");"
+			+ "$('.fl-main-content').not('.fl-main-content-title').append(" +"'" +typography+ "'" + ");"
 		});
   });
 });
